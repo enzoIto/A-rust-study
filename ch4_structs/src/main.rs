@@ -36,3 +36,16 @@ impl Triangle {
         (s * (s - self.side1) * (s - self.side2) * (s - self.side3)).sqrt()
     }
 }
+
+
+fn find_max<T>(vector: Vec<T>) -> T
+    where T: PartialOrd
+{
+    let mut max_el = &vector[0];
+    for i in 1..vector.len() {
+        if vector[i] > *max_el {
+            max_el = &vector[i];
+        }
+    }
+    *max_el
+}
